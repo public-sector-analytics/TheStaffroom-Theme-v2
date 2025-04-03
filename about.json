@@ -32,12 +32,6 @@
   "learn_more": "https://meta.discourse.org/t/beginners-guide-to-using-discourse-themes/91966",
   "settings": [
     {
-      "name": "logo_url",
-      "type": "upload",
-      "default": "assets/logo.png",
-      "description": "Logo image for the login page"
-    },
-    {
       "name": "banner_url",
       "type": "upload",
       "default": "assets/banner.webp",

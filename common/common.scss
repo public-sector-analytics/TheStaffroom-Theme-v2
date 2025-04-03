@@ -241,6 +241,20 @@ opacity: 0px;
 /* Custom Homepage/Login CSS Styles */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
+// Hide Discourse header on login page
+.login-required .d-header {
+  display: none !important;
+}
+
+body.login-required {
+  background: #fff;
+}
+
+#main-outlet.login-required {
+  padding: 0 !important;
+  max-width: 100% !important;
+}
+
 .custom-homepage {
   font-family: 'Inter', sans-serif;
   line-height: 1.6;
@@ -259,18 +273,6 @@ opacity: 0px;
   img {
     max-width: 100%;
     height: auto;
-  }
-
-  // Header styles
-  .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
-
-    .logo {
-      height: 40px;
-    }
   }
 
   .nav-links {
@@ -328,6 +330,12 @@ opacity: 0px;
       flex: 1;
       background-size: cover;
       background-position: center;
+      
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
     }
 
     h1 {
@@ -401,9 +409,9 @@ opacity: 0px;
       flex: 1;
       position: relative;
       overflow: hidden;
+      min-height: 300px;
 
       img {
-        position: absolute;
         width: 100%;
         height: 100%;
         object-fit: cover;
@@ -458,14 +466,16 @@ opacity: 0px;
     font-weight: 600;
   }
 
+  .faq-toggle {
+    font-size: 14px;
+    color: #777;
+    transition: transform 0.3s ease;
+  }
+
   .faq-answer {
     padding-top: 10px;
     color: #555;
     display: none;
-  }
-
-  .faq-toggle {
-    transition: transform 0.3s ease;
   }
 
   // CTA section
@@ -537,6 +547,10 @@ opacity: 0px;
     
     .hero {
       flex-direction: column;
+      
+      &-image {
+        min-height: 200px;
+      }
     }
     
     .educators {
@@ -544,12 +558,6 @@ opacity: 0px;
       
       &-image {
         height: 200px;
-        position: relative;
-        
-        img {
-          position: relative;
-          height: 100%;
-        }
       }
     }
   }
@@ -568,14 +576,4 @@ opacity: 0px;
       width: 100%;
     }
   }
-}
-
-// Hide normal login elements on the login page when our custom page is shown
-.login-page .d-header {
-  display: none;
-}
-
-.login-page #main-outlet {
-  padding: 0;
-  max-width: 100%;
 }
