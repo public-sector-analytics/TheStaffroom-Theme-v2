@@ -229,12 +229,12 @@
         // Initially hide all answers
         if (answer) {
           answer.style.display = 'none';
-          console.log("Hiding answer initially");
+          console.log(`Hiding answer initially: ${answer.innerText}`);
         }
         
         if (question) {
           question.onclick = function() {
-            console.log("Question clicked");
+            console.log(`Question clicked: ${this.innerText}`);
             
             // Close all other answers
             faqItems.forEach(otherItem => {
@@ -250,11 +250,11 @@
             const toggle = item.querySelector('.faq-toggle');
             if (answer && answer.style.display === 'none') {
               answer.style.display = 'block';
-              console.log("Showing answer");
+              console.log(`Showing answer: ${answer.innerText}`);
               if (toggle) toggle.textContent = '▲';
             } else if (answer) {
               answer.style.display = 'none';
-              console.log("Hiding answer");
+              console.log(`Hiding answer: ${answer.innerText}`);
               if (toggle) toggle.textContent = '▼';
             }
           };
