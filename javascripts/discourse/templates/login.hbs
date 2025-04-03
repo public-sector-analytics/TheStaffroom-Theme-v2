@@ -241,6 +241,7 @@
       question.addEventListener('click', function() {
         console.log("Question clicked:", this.innerText);
 
+        const faqItems = document.querySelectorAll('.faq-item');
         let item = this.closest('.faq-item');
         faqItems.forEach(otherItem => {
           let otherAnswer = otherItem.querySelector('.faq-answer');
