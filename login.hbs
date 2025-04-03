@@ -6,16 +6,27 @@
 {{else}}
 <div class="custom-homepage">
   <div class="container">
+    <!-- Header -->
+    <div class="header">
+      <img src="{{theme-setting 'logo_url'}}" alt="The Staffroom Logo" class="logo">
+      <div class="nav-links">
+        <a href="https://askkira.com/blog">Blog</a>
+        <a href="https://app.askkira.com/">askKira</a>
+        <a href="/auth/oauth2_basic" class="cta-button">Chat now in The Staffroom</a>
+      </div>
+    </div>
+
     <!-- Hero Section -->
     <div class="hero">
       <div class="hero-content">
         <h1>AI is Changing Education</h1>
         <h2>Join the The Staffroom, our new forum for educators</h2>
         <p>Built for teachers, headteachers, school leaders, and education professionals using AI to connect, share best practices and grow together.</p>
-        <p>If you have an askKira account, click Log In at the top of the page, otherwise please Sign Up for an account to get access to The Staffroom.</p>
+        <a href="/auth/oauth2_basic" class="cta-button">Log in with your askKira account</a>
+        <a href="/auth/oauth2_basic?signup=true" class="cta-button white" style="margin-top: 15px;">Don't have an account? Sign up now</a>
       </div>
       <div class="hero-image">
-        <img src="/assets/banner.webp" alt="Educators collaborating">
+        <img src="{{theme-setting 'banner_url'}}" alt="Educators collaborating">
       </div>
     </div>
 
@@ -60,7 +71,7 @@
     <!-- Educators Section -->
     <div class="educators">
       <div class="educators-image">
-        <img src="/assets/educator.jpg" alt="Teacher in classroom">
+        <img src="{{theme-setting 'educator_url'}}" alt="Teacher in classroom">
       </div>
       <div class="educators-content">
         <h2>Built for Educators<br>Shaped by UK Schools</h2>
@@ -105,17 +116,21 @@
       <div class="faq-item">
         <div class="faq-question">
           How do I join?
-          <span class="faq-toggle">▼</span>
+          <svg class="faq-toggle" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M19 9l-7 7-7-7"/>
+          </svg>
         </div>
         <div class="faq-answer">
-          <p>To join, click the Sign Up button at the top of the page and follow the instructions to create an account.</p>
+          <p>To join, sign in with your askKira account. If you don't have one, create a free account now <a href="/auth/oauth2_basic?signup=true">here</a>.</p>
         </div>
       </div>
 
       <div class="faq-item">
         <div class="faq-question">
           What makes The Staffroom different from other forums?
-          <span class="faq-toggle">▼</span>
+          <svg class="faq-toggle" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M19 9l-7 7-7-7"/>
+          </svg>
         </div>
         <div class="faq-answer">
           <p>Unlike social media groups or generic education forums, The Staffroom is private, ad-free and designed specifically for educators using askKira. It provides expert insights, resources and exclusive tools aligned with educational needs.</p>
@@ -125,7 +140,9 @@
       <div class="faq-item">
         <div class="faq-question">
           Is The Staffroom free to join?
-          <span class="faq-toggle">▼</span>
+          <svg class="faq-toggle" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M19 9l-7 7-7-7"/>
+          </svg>
         </div>
         <div class="faq-answer">
           <p>Yes! Membership is completely free for askKira users</p>
@@ -135,7 +152,9 @@
       <div class="faq-item">
         <div class="faq-question">
           What topics are discussed in The Staffroom?
-          <span class="faq-toggle">▼</span>
+          <svg class="faq-toggle" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M19 9l-7 7-7-7"/>
+          </svg>
         </div>
         <div class="faq-answer">
           <ul>
@@ -151,7 +170,9 @@
       <div class="faq-item">
         <div class="faq-question">
           How does The Staffroom help with professional development?
-          <span class="faq-toggle">▼</span>
+          <svg class="faq-toggle" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M19 9l-7 7-7-7"/>
+          </svg>
         </div>
         <div class="faq-answer">
           <ul>
@@ -164,7 +185,9 @@
       <div class="faq-item">
         <div class="faq-question">
           Is my data safe?
-          <span class="faq-toggle">▼</span>
+          <svg class="faq-toggle" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M19 9l-7 7-7-7"/>
+          </svg>
         </div>
         <div class="faq-answer">
           <p>Absolutely. The Staffroom is fully GDPR-compliant and built with data security & privacy in mind.</p>
@@ -174,7 +197,9 @@
       <div class="faq-item">
         <div class="faq-question">
           Can I connect with other educators privately?
-          <span class="faq-toggle">▼</span>
+          <svg class="faq-toggle" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M19 9l-7 7-7-7"/>
+          </svg>
         </div>
         <div class="faq-answer">
           <p>Yes! The Staffroom includes dedicated group spaces.</p>
@@ -214,55 +239,41 @@
   </div>
 </div>
 
-<script type="text/javascript">
-  (function() {
-    setTimeout(function() {
-      // Select all FAQ items
-      const faqItems = document.querySelectorAll('.faq-item');
-      console.log("FAQ Items:", faqItems.length);
+<script type="text/discourse-plugin">
+  document.addEventListener('DOMContentLoaded', function() {
+    // Select all FAQ items
+    const faqItems = document.querySelectorAll('.faq-item');
+    
+    // Add click event to each question
+    faqItems.forEach(item => {
+      const question = item.querySelector('.faq-question');
+      const answer = item.querySelector('.faq-answer');
       
-      // Add click event to each question
-      faqItems.forEach(item => {
-        const question = item.querySelector('.faq-question');
-        const answer = item.querySelector('.faq-answer');
+      // Initially hide all answers
+      answer.style.display = 'none';
+      
+      question.addEventListener('click', function() {
+        // Close all other answers
+        faqItems.forEach(otherItem => {
+          if (otherItem !== item) {
+            const otherAnswer = otherItem.querySelector('.faq-answer');
+            const otherToggle = otherItem.querySelector('.faq-toggle');
+            otherAnswer.style.display = 'none';
+            if (otherToggle) otherToggle.style.transform = 'rotate(0deg)';
+          }
+        });
         
-        // Initially hide all answers
-        if (answer) {
+        // Toggle current answer
+        const toggle = item.querySelector('.faq-toggle');
+        if (answer.style.display === 'none') {
+          answer.style.display = 'block';
+          if (toggle) toggle.style.transform = 'rotate(180deg)';
+        } else {
           answer.style.display = 'none';
-          console.log("Hiding answer initially");
-        }
-        
-        if (question) {
-          question.onclick = function() {
-            console.log("Question clicked");
-            
-            // Close all other answers
-            faqItems.forEach(otherItem => {
-              if (otherItem !== item) {
-                const otherAnswer = otherItem.querySelector('.faq-answer');
-                const otherToggle = otherItem.querySelector('.faq-toggle');
-                if (otherAnswer) otherAnswer.style.display = 'none';
-                if (otherToggle) otherToggle.textContent = '▼';
-              }
-            });
-            
-            // Toggle current answer
-            const toggle = item.querySelector('.faq-toggle');
-            if (answer && answer.style.display === 'none') {
-              answer.style.display = 'block';
-              console.log("Showing answer");
-              if (toggle) toggle.textContent = '▲';
-            } else if (answer) {
-              answer.style.display = 'none';
-              console.log("Hiding answer");
-              if (toggle) toggle.textContent = '▼';
-            }
-          };
+          if (toggle) toggle.style.transform = 'rotate(0deg)';
         }
       });
-      
-      console.log("FAQ script initialized");
-    }, 1000);
-  })();
+    });
+  });
 </script>
 {{/unless}} 
