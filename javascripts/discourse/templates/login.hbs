@@ -237,13 +237,14 @@
             console.log("Question clicked:", this.innerText);
     
             let parent = this.closest('.faq-item')
-            let answer = parent.querySelector('.faq-answer');
+            let thisAnswer = parent.querySelector('.faq-answer');
 
             // Close all other answers
             faqItems.forEach(otherItem => {
               if (otherItem !== parent) {
                 let otherAnswer = otherItem.querySelector('.faq-answer');
                 let otherToggle = otherItem.querySelector('.faq-toggle');
+                console.log("Close answer:", otherAnswer.innerText);
                 if (otherAnswer) otherAnswer.style.display = 'none';
                 if (otherToggle) otherToggle.textContent = '▼';
               }
@@ -251,15 +252,15 @@
             
             // Toggle current answer
             let toggle = parent.querySelector('.faq-toggle');
-            if (answer && answer.style.display === 'none') {
-              console.log("Style before toggle:", answer.style);
-              answer.style.display = 'block';
-              console.log("Style after toggle:", answer.style);
-              console.log("Showing answer:", answer.innerText);
+            if (thisAnswer && thisAnswer.style.display === 'none') {
+              console.log("Style before toggle:", thisAnswer.style);
+              thisAnswer.style.display = 'block';
+              console.log("Style after toggle:", thisAnswer.style);
+              console.log("Showing answer:", thisAnswer.innerText);
               if (toggle) toggle.textContent = '▲';
-            } else if (answer && answer.style.display === 'block') {
-              answer.style.display = 'none';
-              console.log("Hiding answer:", answer.innerText);
+            } else if (thisAnswer && thisAnswer.style.display === 'block') {
+              thisAnswer.style.display = 'none';
+              console.log("Hiding answer:", thisAnswer.innerText);
               if (toggle) toggle.textContent = '▼';
             }
           };
