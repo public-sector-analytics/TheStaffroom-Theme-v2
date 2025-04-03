@@ -237,6 +237,8 @@
             console.log("Question clicked:", this.innerText);
     
             let parent = this.closest('.faq-item')
+            let answer = parent.querySelector('.faq-answer');
+
             // Close all other answers
             faqItems.forEach(otherItem => {
               if (otherItem !== parent) {
