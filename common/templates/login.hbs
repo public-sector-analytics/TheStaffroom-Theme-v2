@@ -1,0 +1,279 @@
+{{#unless siteSettings.login_required}}
+  {{!-- Only show traditional login form for non-login-required sites --}}
+  <div class="login-form">
+    {{login-form}}
+  </div>
+{{else}}
+<div class="custom-homepage">
+  <div class="container">
+    <!-- Header -->
+    <div class="header">
+      <img src="{{theme-setting 'logo_url'}}" alt="The Staffroom Logo" class="logo">
+      <div class="nav-links">
+        <a href="https://askkira.com/blog">Blog</a>
+        <a href="https://app.askkira.com/">askKira</a>
+        <a href="/auth/oauth2_basic" class="cta-button">Chat now in The Staffroom</a>
+      </div>
+    </div>
+
+    <!-- Hero Section -->
+    <div class="hero">
+      <div class="hero-content">
+        <h1>AI is Changing Education</h1>
+        <h2>Join the The Staffroom, our new forum for educators</h2>
+        <p>Built for teachers, headteachers, school leaders, and education professionals using AI to connect, share best practices and grow together.</p>
+        <a href="/auth/oauth2_basic" class="cta-button">Log in with your askKira account</a>
+        <a href="/auth/oauth2_basic?signup=true" class="cta-button white" style="margin-top: 15px;">Don't have an account? Sign up now</a>
+      </div>
+      <div class="hero-image">
+        <img src="{{theme-setting 'banner_url'}}" alt="Educators collaborating">
+      </div>
+    </div>
+
+    <!-- Why Join Section -->
+    <div class="why-join">
+      <h2>Why Join The Staffroom?</h2>
+      <p>The Staffroom is the official community for askKira's users - a private, expert-led space where teachers, school leaders and education professionals connect, share and support each other.</p>
+
+      <div class="features">
+        <div class="feature">
+          <div>🔍</div>
+          <h3>Expert Insights</h3>
+          <p>Get AI-powered education insights & strategies</p>
+        </div>
+
+        <div class="feature">
+          <div>💬</div>
+          <h3>Product Q&A</h3>
+          <p>Find answers & discover new askKira features</p>
+        </div>
+
+        <div class="feature">
+          <div>🔒</div>
+          <h3>Safe and Private</h3>
+          <p>Join a private, ad-free community</p>
+        </div>
+
+        <div class="feature">
+          <div>🎯</div>
+          <h3>Leadership Support</h3>
+          <p>Access real-world guidance from those in the field</p>
+        </div>
+
+        <div class="feature">
+          <div>🔧</div>
+          <h3>Best Practices</h3>
+          <p>Learn from fellow teachers & experts on what works</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Educators Section -->
+    <div class="educators">
+      <div class="educators-image">
+        <img src="{{theme-setting 'educator_url'}}" alt="Teacher in classroom">
+      </div>
+      <div class="educators-content">
+        <h2>Built for Educators<br>Shaped by UK Schools</h2>
+        <p>One Login. Three Platforms. Endless Possibilities</p>
+
+        <div class="educators-feature">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M20 6L9 17l-5-5"/>
+          </svg>
+          <div>
+            <strong>Curated, Not Cluttered</strong>
+            <p>Get focused insights & discussions - without distractions</p>
+          </div>
+        </div>
+
+        <div class="educators-feature">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M20 6L9 17l-5-5"/>
+          </svg>
+          <div>
+            <strong>Connection, Not Isolation</strong>
+            <p>Education shouldn't be lonely.<br>Connect with peers who understand your concerns</p>
+          </div>
+        </div>
+
+        <div class="educators-feature">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M20 6L9 17l-5-5"/>
+          </svg>
+          <div>
+            <strong>Empowerment, Not Exhaustion</strong>
+            <p>Stay ahead with time-saving, high-impact learning that fits into your schedule</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FAQ Section -->
+    <div class="faq">
+      <h2>Frequently Asked Questions</h2>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          How do I join?
+          <svg class="faq-toggle" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M19 9l-7 7-7-7"/>
+          </svg>
+        </div>
+        <div class="faq-answer">
+          <p>To join, sign in with your askKira account. If you don't have one, create a free account now <a href="/auth/oauth2_basic?signup=true">here</a>.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          What makes The Staffroom different from other forums?
+          <svg class="faq-toggle" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M19 9l-7 7-7-7"/>
+          </svg>
+        </div>
+        <div class="faq-answer">
+          <p>Unlike social media groups or generic education forums, The Staffroom is private, ad-free and designed specifically for educators using askKira. It provides expert insights, resources and exclusive tools aligned with educational needs.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          Is The Staffroom free to join?
+          <svg class="faq-toggle" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M19 9l-7 7-7-7"/>
+          </svg>
+        </div>
+        <div class="faq-answer">
+          <p>Yes! Membership is completely free for askKira users</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          What topics are discussed in The Staffroom?
+          <svg class="faq-toggle" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M19 9l-7 7-7-7"/>
+          </svg>
+        </div>
+        <div class="faq-answer">
+          <ul>
+            <li>AI in education</li>
+            <li>Leadership & school management</li>
+            <li>Online & SEN policy updates</li>
+            <li>Curriculum design & pedagogy</li>
+            <li>Staff wellbeing & workload reduction</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          How does The Staffroom help with professional development?
+          <svg class="faq-toggle" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M19 9l-7 7-7-7"/>
+          </svg>
+        </div>
+        <div class="faq-answer">
+          <ul>
+            <li>Access masterclasses, training & askKira hackathons</li>
+            <li>Get peer mentorship & expert advice</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          Is my data safe?
+          <svg class="faq-toggle" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M19 9l-7 7-7-7"/>
+          </svg>
+        </div>
+        <div class="faq-answer">
+          <p>Absolutely. The Staffroom is fully GDPR-compliant and built with data security & privacy in mind.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          Can I connect with other educators privately?
+          <svg class="faq-toggle" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M19 9l-7 7-7-7"/>
+          </svg>
+        </div>
+        <div class="faq-answer">
+          <p>Yes! The Staffroom includes dedicated group spaces.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA Section -->
+    <div class="cta">
+      <h2>Still have questions?</h2>
+      <a href="https://askkira.com/contact" class="cta-button">Contact Us</a>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+      <div class="footer-left">
+        <p>Follow us</p>
+        <div class="social-links">
+          <a href="https://www.linkedin.com/company/askkiraai/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://www.facebook.com/askKiraai/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://x.com/askkiraai" target="_blank">
+            <svg width="14" height="14" viewBox="0 0 1200 1227" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M714.163 519.284L1160.89 0H1055.03L667.137 450.887L357.328 0H0L468.492 681.821L0 1226.37H105.866L515.491 750.218L842.672 1226.37H1200L714.137 519.284H714.163ZM569.165 687.828L521.697 619.934L144.011 79.6944H306.615L611.412 515.685L658.88 583.579L1055.08 1150.3H892.476L569.165 687.854V687.828Z" fill="currentColor"/>
+            </svg>
+          </a>
+          <a href="https://www.instagram.com/askkiraai/" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.tiktok.com/@askkiraai" target="_blank"><i class="fab fa-tiktok"></i></a>
+          <a href="https://www.youtube.com/@askkiraai" target="_blank"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+      <div class="footer-right">
+        <p>Copyright © 2023 – 2025<br>
+        Public Sector Analytics Limited. Company No 14889377.<br>
+        All rights reserved. <a href="https://askkira.com/policies">Policies</a>.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script type="text/discourse-plugin">
+  document.addEventListener('DOMContentLoaded', function() {
+    // Select all FAQ items
+    const faqItems = document.querySelectorAll('.faq-item');
+    
+    // Add click event to each question
+    faqItems.forEach(item => {
+      const question = item.querySelector('.faq-question');
+      const answer = item.querySelector('.faq-answer');
+      
+      // Initially hide all answers
+      answer.style.display = 'none';
+      
+      question.addEventListener('click', function() {
+        // Close all other answers
+        faqItems.forEach(otherItem => {
+          if (otherItem !== item) {
+            const otherAnswer = otherItem.querySelector('.faq-answer');
+            const otherToggle = otherItem.querySelector('.faq-toggle');
+            otherAnswer.style.display = 'none';
+            if (otherToggle) otherToggle.style.transform = 'rotate(0deg)';
+          }
+        });
+        
+        // Toggle current answer
+        const toggle = item.querySelector('.faq-toggle');
+        if (answer.style.display === 'none') {
+          answer.style.display = 'block';
+          if (toggle) toggle.style.transform = 'rotate(180deg)';
+        } else {
+          answer.style.display = 'none';
+          if (toggle) toggle.style.transform = 'rotate(0deg)';
+        }
+      });
+    });
+  });
+</script>
+{{/unless}} 
