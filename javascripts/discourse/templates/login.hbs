@@ -250,7 +250,9 @@
             // Toggle current answer
             let toggle = parent.querySelector('.faq-toggle');
             if (answer && answer.style.display === 'none') {
-              answer.style.display = 'block';
+              console.log("Style before toggle:", answer.style);
+              answer.setAttribute('style', '');
+              console.log("Style after toggle:", answer.style);
               console.log("Showing answer:", answer.innerText);
               if (toggle) toggle.textContent = '▲';
             } else if (answer && answer.style.display === 'block') {
