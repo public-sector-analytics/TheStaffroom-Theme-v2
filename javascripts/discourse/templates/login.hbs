@@ -233,23 +233,26 @@
         }
       });
       
-      document.querySelectorAll('.faq-question').addEventListener('click', function() {
-        console.log("Question clicked:", this.innerText);
+      const faqQuestions = document.querySelectorAll('.faq-question');
+      faqQuestions.forEach(question => {
+        question.addEventListener('click', function() {
+          console.log("Question clicked:", this.innerText);
 
-        let item = this.closest('.faq-item');
-        faqItems.forEach(otherItem => {
-          let otherAnswer = otherItem.querySelector('.faq-answer');
-          let otherToggle = otherItem.querySelector('.faq-toggle');
-          if (otherItem !== item || otherAnswer.style.display === 'block') {
-            // Close all other answers
-            console.log("Close answer:", otherAnswer.innerText);
-            if (otherAnswer) otherAnswer.style.display = 'none';
-            if (otherToggle) otherToggle.textContent = '▼';
-          } else {
-            console.log("Showing answer:", otherAnswer.innerText);
-            if (otherAnswer) otherAnswer.style.display = 'block';
-            if (otherToggle) otherToggle.textContent = '▲';
-          }
+          let item = this.closest('.faq-item');
+          faqItems.forEach(otherItem => {
+            let otherAnswer = otherItem.querySelector('.faq-answer');
+            let otherToggle = otherItem.querySelector('.faq-toggle');
+            if (otherItem !== item || otherAnswer.style.display === 'block') {
+              // Close all other answers
+              console.log("Close answer:", otherAnswer.innerText);
+              if (otherAnswer) otherAnswer.style.display = 'none';
+              if (otherToggle) otherToggle.textContent = '▼';
+            } else {
+              console.log("Showing answer:", otherAnswer.innerText);
+              if (otherAnswer) otherAnswer.style.display = 'block';
+              if (otherToggle) otherToggle.textContent = '▲';
+            }
+          });
         });
       });
 
