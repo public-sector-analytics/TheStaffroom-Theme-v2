@@ -237,32 +237,21 @@
             console.log("Question clicked:", this.innerText);
     
             let parent = this.closest('.faq-item')
-            let thisAnswer = parent.querySelector('.faq-answer');
 
-            // Close all other answers
             faqItems.forEach(otherItem => {
-              if (otherItem !== parent) {
-                let otherAnswer = otherItem.querySelector('.faq-answer');
-                let otherToggle = otherItem.querySelector('.faq-toggle');
+              let otherAnswer = otherItem.querySelector('.faq-answer');
+              let otherToggle = otherItem.querySelector('.faq-toggle');
+              if (otherItem !== parent || otherAnswer.style.display === 'block') {
+                // Close all other answers
                 console.log("Close answer:", otherAnswer.innerText);
                 if (otherAnswer) otherAnswer.style.display = 'none';
                 if (otherToggle) otherToggle.textContent = '▼';
+              } else {
+                console.log("Showing answer:", otherAnswer.innerText);
+                otherAnswer.style.display = 'block';
+                if (otherToggle) otherToggle.textContent = '▲';
               }
             });
-            
-            // Toggle current answer
-            let toggle = parent.querySelector('.faq-toggle');
-            if (thisAnswer && thisAnswer.style.display === 'none') {
-              console.log("Style before toggle:", thisAnswer.style);
-              thisAnswer.style.display = 'block';
-              console.log("Style after toggle:", thisAnswer.style);
-              console.log("Showing answer:", thisAnswer.innerText);
-              if (toggle) toggle.textContent = '▲';
-            } else if (thisAnswer && thisAnswer.style.display === 'block') {
-              thisAnswer.style.display = 'none';
-              console.log("Hiding answer:", thisAnswer.innerText);
-              if (toggle) toggle.textContent = '▼';
-            }
           };
         }
       });
