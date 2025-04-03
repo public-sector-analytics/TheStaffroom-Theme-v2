@@ -223,8 +223,8 @@
       
       // Add click event to each question
       faqItems.forEach(item => {
-        const question = item.querySelector('.faq-question');
-        const answer = item.querySelector('.faq-answer');
+        let question = item.querySelector('.faq-question');
+        let answer = item.querySelector('.faq-answer');
         
         // Initially hide all answers
         if (answer) {
@@ -235,24 +235,25 @@
         if (question) {
           question.onclick = function() {
             console.log("Question clicked:", this.innerText);
-            
+    
+            let parent = this.closest('.faq-item')
             // Close all other answers
             faqItems.forEach(otherItem => {
-              if (otherItem !== item) {
-                const otherAnswer = otherItem.querySelector('.faq-answer');
-                const otherToggle = otherItem.querySelector('.faq-toggle');
+              if (otherItem !== parent) {
+                let otherAnswer = otherItem.querySelector('.faq-answer');
+                let otherToggle = otherItem.querySelector('.faq-toggle');
                 if (otherAnswer) otherAnswer.style.display = 'none';
                 if (otherToggle) otherToggle.textContent = '▼';
               }
             });
             
             // Toggle current answer
-            const toggle = item.querySelector('.faq-toggle');
+            let toggle = parent.querySelector('.faq-toggle');
             if (answer && answer.style.display === 'none') {
               answer.style.display = 'block';
               console.log("Showing answer:", answer.innerText);
               if (toggle) toggle.textContent = '▲';
-            } else if (answer) {
+            } else if (answer && answer.style.display === 'block') {
               answer.style.display = 'none';
               console.log("Hiding answer:", answer.innerText);
               if (toggle) toggle.textContent = '▼';
