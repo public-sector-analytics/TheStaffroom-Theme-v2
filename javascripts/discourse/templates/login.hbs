@@ -216,26 +216,6 @@
 
 <script type="text/javascript">
   (function() {
-    setTimeout(function() {
-      // Select all FAQ items
-      const faqItems = document.querySelectorAll('.faq-item');
-      console.log("FAQ Items:", faqItems.length);
-      
-      // Add click event to each question
-      faqItems.forEach(item => {
-        let question = item.querySelector('.faq-question');
-        let answer = item.querySelector('.faq-answer');
-        
-        // Initially hide all answers
-        if (answer) {
-          answer.style.display = 'none';
-          console.log("Hiding answer initially:", answer.innerText);
-        }
-      });
-
-      console.log("FAQ script initialized");
-    }, 1000);
-      
     const faqQuestions = document.querySelectorAll('.faq-question');
     faqQuestions.forEach(question => {
       question.addEventListener('click', function() {

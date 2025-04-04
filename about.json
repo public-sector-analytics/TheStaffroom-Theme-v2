@@ -7,11 +7,6 @@
   "theme_version": 1.0,
   "minimum_discourse_version": null,
   "maximum_discourse_version": null,
-  "assets": {
-    "logo": "assets/logo.png",
-    "banner": "assets/banner.webp",
-    "educator": "assets/educator.jpg"
-  },
   "color_schemes": {
     "staff-color": {
       "primary": "222",
@@ -29,19 +24,5 @@
     }
   },
   "modifiers": {},
-  "learn_more": "https://meta.discourse.org/t/beginners-guide-to-using-discourse-themes/91966",
-  "settings": [
-    {
-      "name": "banner_url",
-      "type": "upload",
-      "default": "assets/banner.webp",
-      "description": "Banner image for the login page"
-    },
-    {
-      "name": "educator_url",
-      "type": "upload",
-      "default": "assets/educator.jpg",
-      "description": "Educator image for the login page"
-    }
-  ]
+  "learn_more": "https://meta.discourse.org/t/beginners-guide-to-using-discourse-themes/91966"
 }
