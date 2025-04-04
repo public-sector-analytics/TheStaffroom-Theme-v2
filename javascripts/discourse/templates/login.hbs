@@ -229,11 +229,11 @@
           if (otherItem !== item || !otherAnswer.classList.contains('faq-hidden')) {
             // Close all other answers
             console.log("Close answer:", otherAnswer.innerText);
-            if (otherAnswer) otherAnswer..classList.add('faq-hidden');
+            if (otherAnswer) otherAnswer.classList.add('faq-hidden');
             if (otherToggle) otherToggle.textContent = '▼';
           } else {
             console.log("Showing answer:", otherAnswer.innerText);
-            if (otherAnswer) otherAnswer..classList.remove('faq-hidden');
+            if (otherAnswer) otherAnswer.classList.remove('faq-hidden');
             if (otherToggle) otherToggle.textContent = '▲';
           }
         });
